@@ -42,9 +42,9 @@ class Scraper
       end
 
       profile[:profile_quote] = html.css("div.profile-quote").text if html.css("div.profile-quote").text
-      
+
       profile[:bio] = html.css("div.bio-content.content-holder div.description-holder p").text if html.css("div.bio-content.content-holder div.description-holder p").text
-       profile  
+       profile
   end
 
 end
