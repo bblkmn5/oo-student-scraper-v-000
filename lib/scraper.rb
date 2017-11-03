@@ -31,20 +31,20 @@ class Scraper
 
       socials.each do |link|
         if link.include?("twitter")
-          profile[:twitter] = link
+          scraped_students[:twitter] = link
         elsif link.include?("linkedin")
-          profile[:linkedin] = link
+          scraped_students[:linkedin] = link
         elsif link.include?("github")
-          profile[:github] = link
+          scraped_students[:github] = link
         else
-          profile[:blog] = link
+        scraped_students[:blog] = link
         end
       end
 
-      profile[:profile_quote] = html.css("div.profile-quote").text if html.css("div.profile-quote").text
+      scraped_students[:profile_quote] = html.css("div.profile-quote").text if html.css("div.profile-quote").text
 
-      profile[:bio] = html.css("div.bio-content.content-holder div.description-holder p").text if html.css("div.bio-content.content-holder div.description-holder p").text
-       profile
+      scraped_students[:bio] = html.css("div.bio-content.content-holder div.description-holder p").text if html.css("div.bio-content.content-holder div.description-holder p").text
+       scraped_students
   end
 
 end
